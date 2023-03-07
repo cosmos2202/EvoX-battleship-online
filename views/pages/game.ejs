@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Battleship Online</title>
+  <% include ../partials/head %>
+
+    <link rel="stylesheet" href="../css/game.css">
+    <script src="../js/game.js"></script>
+</head>
+
+<body class="bg">
+  <script>
+    let CURRENT_GAME = '<%- JSON.stringify(game) %>';
+  </script>
+
+  <nav role="banner" class="navigation">
+    <a href="/" target="_self" title="Go to start page">
+      <div class="logo bg">EvoX</div>
+    </a>
+    <div class="game-info"></div>
+    <img class="spinner not-visible" src="../images/spinner.svg" alt="waiting">
+  </nav>
+  
+  <main role="main">
+
+      <div class="evox-price">
+        <div class="wrapper-price"><img src="../images/coin-back.png" alt="" class="back"><img src="../images/coin-front.png" alt="" class="front"></div>
+      </div>
+
+    <div class="players not-visible">
+      <div class="row">
+        <p class="player-id"></p>
+        <p>VS</p>
+        <p class="opponent-id"></p>
+      </div>
+    </div>
+
+    <section class="game-complete convex not-visible shadow">
+      <div class="row">
+        <p></p>
+      </div>
+      <div class="row">
+        <button type="button" class="play-again primary-button">Play Again</button>
+      </div>
+    </section>
+
+    <section class="game-incomplete not-visible">
+      <div class="row">
+        <p>Almost ready to battle. Send this link to a friend so that they can join.</p>
+      </div>
+      <div class="row flex-row">
+        <input class="join-game-link" readonly>
+        <button type="button" class="copy" title="Copy">
+          <i class="far fa-copy"></i>
+        </button>
+      </div>
+      <div class="row">
+        <button type="button" class="acknowledge-button secondary-button">Got it</button>
+      </div>
+    </section>
+
+    <section class="game not-visible">
+
+      <div class="game-boards">
+        <div class="row flex-row">
+          <form class="battleship-game">
+            <div class="players-turns">
+              <fieldset disabled>
+                <legend>
+                  <p class="board-name">Enemy ships</p>
+                </legend>
+                <div class="battleship-game-fieldset shadow" role="table">
+
+                </div>
+              </fieldset>
+            </div>
+            <button type="submit" class="fire primary-button not-visible">
+              <i class="fas fa-bomb"></i> Fire!</button>
+          </form>
+        </div>
+        <div class="row flex-row">
+          <div>
+            <p class="board-name">My ships</p>
+            <div class="players-board" role="table"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row flex-row">
+        <div class="status-update" aria-live="polite">
+          <p></p>
+        </div>
+      </div>
+      <div class="row flex-row">
+        <div class="legend" aria-hidden="true">
+          <div class="legend-item">
+            <div class="hit"></div>
+            <div>
+              <p>hit</p>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="miss"></div>
+            <div>
+              <p>miss</p>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="ship">
+              <canvas id="ship-legend" width=24 height=24></canvas>
+            </div>
+            <div>
+              <p>ship</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% include ../partials/error %>
+    <div class="evox-price">
+      <div class="livecoinwatch-widget-1 " lcw-coin="EVOX" lcw-base="USD" lcw-secondary="BTC" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-pr="#85009a" lcw-color-bg="#1f2434" lcw-border-w="1" ></div>
+    </div>
+  </main>
+</body>
+
+</html>

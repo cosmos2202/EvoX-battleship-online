@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>EvoX Battleship Online</title>
+  <% include ../partials/head %>
+
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
+    <link type="Image/x-icon" href="/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js"></script>
+</head>
+
+<body>
+  <div class="bg convex">
+    <header role="banner">
+      <div class="row">
+        <img class="ship" src="../images/ship.png" alt="an image of battleship">
+      </div>
+      <div class="row">
+        <h1>EvoX Battleship Online</h1>
+      </div>
+    </header>
+    <main role="main">
+      <div class="row">
+        <p class="intro">A casual game of Battleship to play with a friend.</p>
+        <p class="intro">No registration, pen or paper is required ;)</p>
+        <p class="intro">Just click the button, a link will be generated, just send it to whoever you want to play with.</p>
+        <p class="intro">Created by Evolution network for EvoX users :)</p>
+      </div>
+
+      <div class="row not-visible new-game-section">
+        
+        <button type="button" class="new-battle primary-button" data-intro="Jump straight into the game." data-position="bottom">
+          <i class="fas fa-bomb"></i> Start Battle!</button>
+        <p>
+          <a class="whats-this" href="javascript:void(0)" aria-hidden="true">I need some help</a>
+        </p>
+      </div>
+      <div id="button-help" class="not-visible">This is auto generated player name. Press button to generate a new one.</div>
+    </main>
+    <% include ../partials/error %>
+  </div>
+</body>
+
+</html>
